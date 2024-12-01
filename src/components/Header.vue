@@ -1,12 +1,12 @@
 <script setup>
-
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
     <div class="topnav">
-        <a href="#home"><img id="logo" src="../assets/better netflix.png"></a>
-        <a href="#sign-in" class="right">Sign In</a>
-        <a href="#register" class="right">Register</a>
+        <RouterLink to="/"><img id="logo" src="../assets/better netflix.png"></RouterLink>
+        <RouterLink to="/login" class="right">Sign In</RouterLink>
+        <RouterLink to="/register" class="right">Register</RouterLink>
     </div>
 </template>
 

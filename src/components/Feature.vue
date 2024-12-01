@@ -1,5 +1,12 @@
 <script setup>
+import axios from "axios";
+import { ref, onMounted } from 'vue';
 
+const response = ref(null);
+
+onMounted(async () => {
+    response.value = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${import.meta.env.VITE_TMDB_KEY}`);
+})
 </script>
 
 <template>
@@ -7,21 +14,17 @@
         Featured movies and shows
     </h1>
     <div class="flexbox-container">
-        <div class="flexbox-item flexbox-item-1">
-            <img src="../assets/into the spiderverse.jpg">
+        <div v-if="response" class="movie-list">
+            <div v-for="movie in response.data.results.slice(0, 5)" :key="movie.id" class="flexbox-item"
+                @click="getMovieDetails(movie.id)">
+                <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="Movie Poster"/>
+                <p class="movie-title">{{ movie.title }}</p>
+            </div>
         </div>
-        <div class="flexbox-item flexbox-item-2">
-            <img src="../assets/across the spiderverse.jpg">
-        </div>
-        <div class="flexbox-item flexbox-item-3">
-            <img src="../assets/the office.jpg">
-        </div>
-        <div class="flexbox-item flexbox-item-4">
-            <img src="../assets/lala land.jpg">
-        </div>
-        <div class="flexbox-item flexbox-item-5">
-            <img src="../assets/whiplash.jpg">
-        </div>
+    </div>
+
+    <div class="movie-gallery">
+        
     </div>
 </template>
 
