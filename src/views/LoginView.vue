@@ -96,12 +96,10 @@ const handleLogin = () => {
 @media (max-width: 600px) {
   .input-field {
     width: 90%;
-    /* Make input fields responsive */
   }
 
   .navbar h1 {
     font-size: 1.5rem;
-    /* Reduce font size on smaller screens */
   }
 }
 </style>

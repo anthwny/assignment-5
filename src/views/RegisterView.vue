@@ -60,13 +60,11 @@ const checkPasswords = () => {
   justify-content: center;
   color: white;
   padding: 20px;
-  /* Added padding for better spacing */
 }
 
 .form-container {
   text-align: center;
   margin-top: 50px;
-  /* Adjusts spacing from the top */
 }
 
 .form-container h2 {
@@ -76,20 +74,16 @@ const checkPasswords = () => {
 
 .input-field {
   padding: 15px;
-  /* Increased padding for better touch targets */
   width: 300px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  /* Added a border */
   margin-bottom: 15px;
   transition: border-color 0.3s;
 }
 
 .input-field:focus {
   border-color: #69d8ff;
-  /* Change border color on focus */
   outline: none;
-  /* Remove default outline */
 }
 
 .register {
@@ -101,24 +95,20 @@ const checkPasswords = () => {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  /* Added transform for hover effect */
 }
 
 .register:hover {
   background-color: #428eaa;
   transform: scale(1.05);
-  /* Slightly scale up on hover */
 }
 
 @media (max-width: 600px) {
   .input-field {
     width: 90%;
-    /* Make input fields responsive */
   }
 
   .navbar h1 {
     font-size: 1.5rem;
-    /* Reduce font size on smaller screens */
   }
 }
 </style>
