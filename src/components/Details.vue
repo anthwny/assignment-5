@@ -12,7 +12,7 @@ console.log(response.data);
         <h1 class="movie-title">{{ response.data.original_title }}</h1>
         <p class="movie-overview">{{ response.data.overview }}</p>
         <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
-        <p class="movie-rating">Rating: {{ Math.round(response.data.vote_average * 10) / 10}}/10</p>
+        <p class="movie-rating">Rating: {{ Math.round(response.data.vote_average * 10) / 10 }}/10</p>
         <p class="movie-runtime">Length: {{ response.data.runtime }} minutes</p>
         <div>
             <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster"
