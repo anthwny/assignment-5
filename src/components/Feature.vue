@@ -11,7 +11,7 @@ onMounted(async () => {
 
 <template>
     <h1>
-        Featured movies and shows
+        Featured movies
     </h1>
     <div class="flexbox-container">
         <div v-if="response" class="movie-list">
