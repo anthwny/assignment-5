@@ -12,8 +12,12 @@ console.log(response.data);
         <h1 class="movie-title">{{ response.data.original_title }}</h1>
         <p class="movie-overview">{{ response.data.overview }}</p>
         <p class="movie-release-date">Release Date: {{ response.data.release_date }}</p>
-        <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster"
-            class="movie-poster" />
+        <p class="movie-rating">Rating: {{ Math.round(response.data.vote_average * 10) / 10}}/10</p>
+        <p class="movie-runtime">Length: {{ response.data.runtime }} minutes</p>
+        <div>
+            <img :src="`https://image.tmdb.org/t/p/w500${response.data.poster_path}`" alt="Movie Poster"
+                class="movie-poster" />
+        </div>
         <a class="movie-site" :href="response.data.homepage" target="_blank">Official Movie Site</a>
         <h2 class="trailers-title">Trailers</h2>
         <div class="trailers-container">
@@ -45,7 +49,7 @@ console.log(response.data);
     margin-bottom: 10px;
 }
 
-.movie-release-date {
+.movie-runtime {
     font-size: 1rem;
     margin-bottom: 20px;
 }

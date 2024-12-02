@@ -11,7 +11,7 @@ const handleLogin = () => {
   if (password.value === "amongus") {
     router.push("/movies");
   } else {
-    alert("Invalid Password");
+    alert("Invalid password");
   }
 };
 </script>
@@ -23,8 +23,12 @@ const handleLogin = () => {
       <div class="form-container">
         <h2>Login to Your Account</h2>
         <form @submit.prevent="handleLogin">
-          <input type="email" placeholder="Email" class="input-field" required />
-          <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
+          <div class="form-group">
+            <input type="email" placeholder="Email" class="input-field" required />
+          </div>
+          <div class="form-group">
+            <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
+          </div>
           <button type="submit" class="button login">Login</button>
         </form>
       </div>
@@ -60,7 +64,6 @@ const handleLogin = () => {
   width: 300px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  /* Added a border */
   margin-bottom: 15px;
   transition: border-color 0.3s;
 }
@@ -83,13 +86,11 @@ const handleLogin = () => {
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  /* Added transform for hover effect */
 }
 
 .login:hover {
   background-color: #428eaa;
   transform: scale(1.05);
-  /* Slightly scale up on hover */
 }
 
 @media (max-width: 600px) {
