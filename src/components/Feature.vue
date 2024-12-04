@@ -14,6 +14,7 @@ onMounted(async () => {
         Featured movies
     </h1>
     <div class="flexbox-container">
+        <!-- TODO: randomize the movies -->
         <div v-if="response" class="movie-list">
             <div v-for="movie in response.data.results.slice(0, 5)" :key="movie.id" class="flexbox-item"
                 @click="getMovieDetails(movie.id)">
